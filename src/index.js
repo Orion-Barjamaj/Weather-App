@@ -16,6 +16,8 @@ const todayIcon = document.querySelector('.todayIcon');
 const grad = document.querySelector('.grad');
 const celsiusText = document.querySelector('.celsius');
 const fahrenheitText = document.querySelector('.fahrenheit');
+const error = document.querySelector('.error');
+error.style.display = 'none';
 let celsius = true;
 
 ShowTemp('London');
@@ -24,6 +26,7 @@ async function ShowTemp(name){
     try{
         let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=f4047df59b024d8f9b4164352241805&q=${name}&days=3&aqi=yes&alerts=yes`, {mode: 'cors'});
         let weather = await response.json();
+        error.style.display = 'none';
         console.log(weather);
         if(celsius){
             temperature.textContent = weather.current.temp_c + ' °C';
@@ -36,7 +39,7 @@ async function ShowTemp(name){
         }
         clouds.textContent = weather.current.cloud + '%';
         humidity.textContent = weather.current.humidity + '%';
-        weatherCondition.textContent = weather.current.condition.text;
+        weatherCondition.textContent = weather.current.condition.text.toLowerCase();
         todayIcon.src = 'https:'+ weather.current.condition.icon;
         for(let i = 0; i < weather.forecast.forecastday.length; i++){
             if(i < dates.length){
@@ -53,7 +56,7 @@ async function ShowTemp(name){
     } 
     catch(err){
         console.log(err);
-        alert(`Please refresh the page if it isn't working properly!`);
+        error.style.display = 'block';
     }
 }
 
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         span.textContent = cityName.value || cityName.placeholder;
 
         document.body.appendChild(span);
-        cityName.style.width = `${span.offsetWidth + 15}px`;
+        cityName.style.width = `${span.offsetWidth + 25}px`;
         document.body.removeChild(span);
     }
     resizeInput();
