@@ -1,0 +1,148 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.head{
+    margin-bottom: 100px;
+}
+
+.temp{
+    font-size: 95px;
+}
+
+h1{
+    text-align: center;
+    font-weight: 500;
+}
+
+input{
+    outline: none;
+    height: 40px;
+    border: 0px solid;
+    font-weight: bold;
+    font-size: 40px;
+    width: auto;
+    min-width: 50px;
+    border-bottom: 1px solid black;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.next3Days{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 200px);
+}
+
+.weatherStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.dayObject{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    transition: .2s;
+}
+
+.dayObject:hover{
+    transform: scale(1.05);
+}
+
+.icon{
+    width: 64px;
+    height: 64px;
+}
+
+.nextTemp{
+    font-weight: 500;
+    margin-top: auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.date{
+    font-size: 25px;
+    margin-bottom: auto;
+}
+
+.tempContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tempAndOtherStuff{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.otherInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.otherInfoContainer{
+    display: flex;
+    font-size: 20px;
+    gap: 20px;
+    transition: .2s;
+}
+
+.otherInfoContainer:hover{
+    transform: scale(1.1);
+}
+
+.todayIcon{
+    width: 100px;
+    height: 100px;
+}
+
+#infoImages{
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+}
+
+.switchBetween{
+    margin-top: auto;
+    margin-bottom: 50px;
+}
+
+.grad{
+    width: 100px;
+    height: 40px;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    transition: .3s;
+}
+
+.grad:hover{
+    cursor: pointer;
+    color: grey;
+}
