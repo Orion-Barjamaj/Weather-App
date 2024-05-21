@@ -24,7 +24,7 @@ ShowTemp('London');
 
 async function ShowTemp(name){
     try{
-        let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=f4047df59b024d8f9b4164352241805&q=${name}&days=3&aqi=yes&alerts=yes`, {mode: 'cors'});
+        let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=f4047df59b024d8f9b4164352241805&q=${name}&aqi=yes`, {mode: 'cors'});
         let weather = await response.json();
         error.style.display = 'none';
         console.log(weather);
